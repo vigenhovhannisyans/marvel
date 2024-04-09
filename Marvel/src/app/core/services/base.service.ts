@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { environment } from '../../environments/environment.development';
+import { environment } from '../../../environments/environment.development';
 import { md5 } from 'js-md5';
 import { Store } from '@ngrx/store';
 
@@ -10,7 +10,7 @@ import { Store } from '@ngrx/store';
 export class BaseService {
   public readonly http: HttpClient = inject(HttpClient);
   public readonly store: Store = inject(Store);
-  public readonly ts:number = new Date().getTime()
+  public readonly ts: number = new Date().getTime()
   public readonly apiURL: string = environment.apiUrl;
   public readonly apiKey: string = environment.publicKey;
   public readonly privateKey: string = environment.privateKey;

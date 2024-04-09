@@ -1,0 +1,28 @@
+<div class="header">
+  <nav class="navbar container navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <mrl-icon [className]="'marvel-icon'" [name]="'marvel-icon.png'" />
+      </a>
+      <button (click)="toggleButton()" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="line-toggle"></span>
+        <span class="line-toggle"></span>
+        <span class="line-toggle"></span>
+        <span class="line-toggle"></span>
+      </button>
+      <div [class.show]="isShow" class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          @for (router of routers; track $index) {
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="router.path" routerLinkActive="active"
+              [routerLinkActiveOptions]="{exact: true}" aria-current="page">{{router.title}}
+              <span class="line"></span>
+            </a>
+          </li>
+          }
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>

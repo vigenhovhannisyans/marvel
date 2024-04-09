@@ -1,0 +1,80 @@
+@import '../../../../assets/variables/colors';
+@import '../../../../assets/variables/mixins';
+.header {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 9;
+    background-color: $background;
+    .navbar {
+        .navbar-brand {
+            ::ng-deep {
+                .marvel-icon {
+                    width: 150px;
+                    height: 60px;
+                }
+            }
+        }
+        .navbar-toggler {
+            width: 50px;
+            height: 40px;
+            padding: 0;
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: none;
+            outline: none;
+            @include tablet {
+                display: flex;
+            }
+            .line-toggle {
+                display: block;
+                width: 100%;
+                background-color: $red;
+                height: 4px;
+            }
+        }
+        .collapse {
+            flex-direction: row-reverse;
+
+            .nav-item {
+                margin-right: 10px;
+                &:last-child {
+                    margin-right: 0;
+                }
+                @include tablet {
+                    width: max-content;
+                    margin: auto !important;
+                }
+                .nav-link {
+                    color: $white;
+                    font-size: 20px;
+                    position: relative;
+                    &.active {
+                        .line {
+                            width: 100%;
+                        }
+                    }
+                    &:hover {
+                        .line {
+                            width: 100%;
+                        }
+                    }
+                    .line {
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        width: 0;
+                        height: 3px;
+                        background-color: $red;
+                        transition: all .5s;
+                    }
+                }
+            }
+      
+        }
+    }
+
+}
