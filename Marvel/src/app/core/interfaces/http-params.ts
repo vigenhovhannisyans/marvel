@@ -1,6 +1,6 @@
 export interface HttpParamsI {
-    ts: string;
-    limit: number;
-    offset: number;
+    ts?: string;
+    limit?: number;
+    offset?: number;
     
 }

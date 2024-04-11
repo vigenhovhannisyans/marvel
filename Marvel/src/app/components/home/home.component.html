@@ -3,12 +3,46 @@
         <div class="welcome container">
             <div class="texts">
                 <h1 class="title">Welcome!</h1>
-                <p class="desc">The Marvel Cinematic Universe (MCU) is an American media franchise and shared universe centered on a series of superhero films produced by Marvel Studios.</p>
+                <p class="desc">The Marvel Cinematic Universe (MCU) is an American media franchise and shared universe
+                    centered on a series of superhero films produced by Marvel Studios.</p>
             </div>
             <div class="logo">
-                <mrl-marvel/>
+                <mrl-marvel />
             </div>
         </div>
-        <mrl-icon [className]="'wallpaper'" [isIcon]="false" [name]="'wallpaper-home.jpg'"/>
+        <mrl-icon [className]="'wallpaper'" [isIcon]="false" [name]="'wallpaper-home.jpg'" />
     </div>
+    <mrl-container-data [title]="'Characters'" [dataToShow$]="characters$"/>
+    <div class="wallpaper-side">
+        <div class="welcome container">
+            <div class="logo">
+                <mrl-shield />
+            </div>
+            <div class="texts">
+                <h1 class="title">Captain America</h1>
+                <p class="desc">Captain America's shield is a fictional item appearing in American comic books published
+                    by Marvel Comics.</p>
+            </div>
+
+        </div>
+        <mrl-icon [className]="'wallpaper'" [isIcon]="false" [name]="'captain.jpg'" />
+    </div>
+    <mrl-container-data [title]="'Comics'" [dataToShow$]="comics$"/>
+    <div class="wallpaper-side">
+        <div class="welcome container">
+            <div class="texts">
+                <h1 class="title">Spider-Man</h1>
+                <p class="desc">"Spider-Man" centers on student Peter Parker (Tobey Maguire) who, after being bitten by
+                    a genetically-altered spider, gains superhuman strength and the spider-like ability to cling to any
+                    surface.</p>
+            </div>
+            <div class="logo">
+                <mrl-spider />
+            </div>
+        </div>
+        <mrl-icon [className]="'wallpaper'" [isIcon]="false" [name]="'spiderman-wallpaper.jpg'" />
+    </div>
+    <mrl-container-data [title]="'Comics'" [dataToShow$]="series$"/>
+
 </div>
+ 

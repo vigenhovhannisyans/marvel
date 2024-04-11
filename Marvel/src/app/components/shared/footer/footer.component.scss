@@ -1,0 +1,15 @@
+@import "../../../../assets/variables/colors";
+.footer {
+    background-color: $gray;
+    height: 60px;
+    margin-top: 40px;
+    .text {
+        color: white;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        height: 60px;
+    }
+}

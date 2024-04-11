@@ -1,0 +1,17 @@
+<div class="characters container">
+    <h1 class="char">{{title}}</h1>
+    @if(dataToShow$ | async; as dataToshow) {
+    <div class="character-side">
+        @for (character of dataToshow.data.results; track $index) {
+        <div class="character">
+            <img class="character-img" [src]="character.thumbnail.path+'.'+character.thumbnail.extension" alt="">
+            <span class="name">{{character.name || character.title}}</span>
+        </div>
+        }
+    </div>
+    <mrl-button [className]="'browse'">Browse more</mrl-button>
+    }@else {
+    <mrl-loader />
+    }
+
+</div>

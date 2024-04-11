@@ -1,0 +1,90 @@
+@import "../../../../assets/variables/colors";
+@import "../../../../assets/variables/mixins";
+
+.characters {
+    min-height: 500px;
+    .char {
+        color: $white;
+        font-size: 60px;
+        text-align: center;
+        margin-top: 60px;
+    }
+    ::ng-deep {
+        .browse {
+            display: block;
+            margin: auto;
+            width: 300px;
+            height: 40px;
+            margin-top: 30px;
+            font-size: 25px;
+            clip-path: polygon(13% 0%, 100% 0%, 88% 100%, 0% 100%);
+            transition: all .5s;
+            &:hover {
+                background-color: $white;
+                color: $red;
+            }
+
+        }
+    }
+    .character-side {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        flex-wrap: wrap;
+        @include mobile {
+            justify-content: center;
+        }
+        .character {
+            position: relative;
+            overflow: hidden;
+            border-radius: 3px;
+            margin-bottom: 20px;
+            margin-right: 20px;
+            @include mobile {
+                justify-content: center;
+               margin-right: 0;
+            }
+        
+            &:hover {
+                cursor: pointer;
+                .name {
+                    transform: translate(-50%, 10px);
+                }
+                .character-img {
+                    transform: scale(1.5);
+                }
+            }
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                height: 300px;
+                background: rgb(0, 0, 0);
+                background: linear-gradient(
+                    0deg,
+                    rgba(0, 0, 0, 1) 0%,
+                    rgba(0, 0, 0, 0.5662858893557423) 55%,
+                    rgba(0, 212, 255, 0) 100%
+                );
+            }
+            .character-img {
+                width: 230px;
+                height: 300px;
+                transition: all 0.5s;
+            }
+            .name {
+                color: $white;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, 1110px);
+                text-align: center;
+                z-index: 2;
+                font-size: 30px;
+                transition: all 0.5s;
+            }
+        }
+    }
+}

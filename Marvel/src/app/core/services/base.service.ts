@@ -3,6 +3,7 @@ import { Injectable, inject } from '@angular/core';
 import { environment } from '../../../environments/environment.development';
 import { md5 } from 'js-md5';
 import { Store } from '@ngrx/store';
+import { HttpParamsI } from '../interfaces/http-params';
 
 @Injectable({
   providedIn: 'root'
@@ -17,11 +18,13 @@ export class BaseService {
   public readonly message: string = this.ts + this.privateKey + this.apiKey;
   public readonly hash: string = md5(this.message);
 
-  public params(): HttpParams {
+  public params({limit, offset}: HttpParamsI): HttpParams {
     let httpParams = new HttpParams();
     httpParams = httpParams.append('ts', this.ts);
     httpParams = httpParams.append('apikey', this.apiKey);
     httpParams = httpParams.append('hash', this.hash);
+    httpParams = httpParams.append('limit', limit ?? 20);
+    httpParams = httpParams.append('offset', offset ?? 0);
     return httpParams
   }
 }

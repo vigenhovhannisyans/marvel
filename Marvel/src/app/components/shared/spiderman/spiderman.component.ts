@@ -8,14 +8,14 @@ import { getWindowSizes } from '../../../core/helpers/get-window-size';
 import { dimensions } from '../../../core/constants/dimensions';
 
 @Component({
-  selector: 'mrl-marvel',
+  selector: 'mrl-spider',
   standalone: true,
   imports: [],
   providers: [ThreeService],
-  template: `<canvas #logo></canvas>`,
+  template: `<canvas #spiderman></canvas>`,
 })
-export class MarvelComponent {
-  @ViewChild('logo')
+export class SpidermanComponent {
+  @ViewChild('spiderman')
   public canvas!: ElementRef;
 
   public width: number = 200;
@@ -51,7 +51,7 @@ export class MarvelComponent {
   private createModel(): void {
     this.threeService.scene = new Three.Scene();
     const modelLoader = new GLTFLoader();
-    modelLoader.load('../../../assets/models/marvel.gltf', (gltf: GLTF) => {
+    modelLoader.load('../../../assets/models/spiderman.gltf', (gltf: GLTF) => {
       const model = gltf.scene;
       const group = new Three.Group();
       group.add(model);
@@ -60,7 +60,7 @@ export class MarvelComponent {
       boundingBox.getCenter(center);
       model.position.sub(center);
       this.threeService.scene.add(group);
-      group.scale.set(8,8,8);
+      group.scale.set(16,16,16);
     });
   }
 }

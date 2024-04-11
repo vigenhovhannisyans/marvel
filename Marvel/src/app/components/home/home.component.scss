@@ -1,5 +1,5 @@
-@import '../../../assets/variables/colors';
-@import '../../../assets/variables/mixins';
+@import "../../../assets/variables/colors";
+@import "../../../assets/variables/mixins";
 
 .home {
     .wallpaper-side {
@@ -24,8 +24,8 @@
             }
             .desc {
                 color: $white;
-                font-size: 40px;
-                @include mobileXL{
+                font-size: 30px;
+                @include mobileXL {
                     font-size: 30px;
                 }
                 @include mobile {
@@ -34,12 +34,12 @@
             }
         }
         &::after {
-            content: '';
+            content: "";
             display: block;
             position: absolute;
             bottom: 0;
             width: 100%;
-            height: 1000px;
+            height: 800px;
             background: rgb(0, 0, 0);
             background: linear-gradient(
                 0deg,
@@ -56,7 +56,7 @@
             height: 800px;
             object-fit: cover;
             position: relative;
-      
         }
     }
+
 }
